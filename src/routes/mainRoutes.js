@@ -1,20 +1,17 @@
 // mainRoutes.js
 const express = require("express");
 const router = express.Router();
-const collectionRoutes = require("./collectionRoutes");
-const photoRoutes = require("./photoRoutes")
-const archiveRoutes = require("./achiveRoutes")
-const archivePhotoRoutes = require("./archivePhotoRoutes")
-const userRoutes = require("./userRoutes");
+
+const mediaRoutes = require("./mediaRoutes");
+const productRoutes = require("./productRoutes");
+const categoryRoutes = require("./categoryRoutes");
 
 router.get("/", (req, res) => {
-    res.send("Welcome to the root URL");
-  });
+  res.send("Welcome to the root URL");
+});
 
-router.use("/collection", collectionRoutes);
-router.use("/archive", archiveRoutes);
-router.use("/archive-photo", archivePhotoRoutes);
-router.use("/photo", photoRoutes);
-router.use("/user", userRoutes);
+router.use("/products", productRoutes);
+router.use("/media", mediaRoutes);
+router.use("/category", categoryRoutes);
 
 module.exports = router;
